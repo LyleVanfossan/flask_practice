@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+        <title>flask-todo</title>
+    </head>
+    <body>
+        {% extends 'base.html' %}
+
+        {% block content %}
+            <h1>{% block title %} To Do {% endblock %}</h1>
+            {% for task in tasks %}
+                <a href="{{ url_for('task', task_id=task['id']) }}">
+                    <h2>{{ task['title'] }}</h2>
+                </a>
+                <span class="badge badge-primary">{{ task['created'] }}</span>
+                <hr>
+            {% endfor %}
+        {% endblock %}
+    </body>
+</html>

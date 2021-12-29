@@ -1,0 +1,11 @@
+# Python
+Lib*
+Scripts*
+pyvenv.cfg
+__pycache__/*
+
+# Etc
+database.db
+init_db.py
+schema.sql
+.idea
